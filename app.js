@@ -2,6 +2,25 @@ const express = require('express');
 const { CLIENT_RENEG_LIMIT } = require('tls');
 const app = express();
 const port = process.env.PORT || 3000;
+//conexion a base de datos
+const mongoose = require('mongoose');
+
+const user = "rh"
+const password = "42450573"
+const dbName = "Viajes"
+
+const uri = `mongodb+srv://${user}:${password}@botviajes.m1qthan.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+
+mongoose.connect(uri, 
+  
+   { useNewUrlParser: true,
+     useUnifiedTopology: true 
+   })
+  
+   .then(()=> console.log('conectado a mongodb')) 
+  .catch(e => console.log('error de conexión', e))
+
+//motor de plantillas
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
