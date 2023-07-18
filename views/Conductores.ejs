@@ -1,0 +1,29 @@
+<%- include('./templates/cabecera.ejs', {tituloWeb: 'HOME pagina de inicio'}) %>
+   
+<div class="container">
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Destino</th>
+                    <th scope="col">Origen</th>
+                    <th scope="col">Contactar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% if (arrayConductores.length > 0) {%>
+                        <% arrayConductores.forEach(conductor => { %>
+                            <tr>
+                                <th scope="row"><%= conductor.id %></th>
+                                <th scope="row"><%= conductor.nombre %></th>
+                                <th scope="row"><%= conductor.destino %></th>
+                                <th scope="row"><%= conductor.origen %></th>
+                            </tr>
+                         <%})%>
+                    <% } %>
+                </tbody>
+              </table>
+</div>
+
+<%- include('./templates/footer.ejs') %>
