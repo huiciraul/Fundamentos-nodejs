@@ -1,6 +1,4 @@
-<%- include("template/cabecera", {tituloWeb: 'HOME pagina de inicio'}) %>
-<body>
-    <h1>Titulo de mi sitio web index</h1>
+<%- include('./templates/cabecera.ejs', {tituloWeb: 'HOME pagina de inicio'}) %>
+    <h1 class="text-primary">Titulo de mi sitio web index</h1>
     <h2> <%= titulo %> </h2>   
-</body>
-</html>
+<%- include('./templates/footer.ejs') %>

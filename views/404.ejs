@@ -1,7 +1,5 @@
-<%- include("template/cabecera", {tituloWeb: 'Error de ruta'}) %>
-<body>
+<%- include('./templates/cabecera.ejs', {tituloWeb: 'Error de ruta'}) %>
     <h1>EJS 404</h1>
     <h2> <%= titulo %> </h2>
     <h2> <%= descripcion %> </h2>
-</body>
-</html>
+<%- include('./templates/footer.ejs') %>
