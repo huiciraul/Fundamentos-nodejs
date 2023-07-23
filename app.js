@@ -3,12 +3,13 @@ const { CLIENT_RENEG_LIMIT } = require('tls');
 const app = express();
 const port = process.env.PORT || 3000;
 
+//para variables de entorno
+require('dotenv').config()
+
 //conexion a base de datos
 const mongoose = require('mongoose');
-const user = "rh"
-const password = "42450573"
-const dbName = "Viajes"
-const uri = `mongodb+srv://${user}:${password}@botviajes.m1qthan.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@botviajes.m1qthan.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 mongoose.connect(uri, 
      { useNewUrlParser: true,
      useUnifiedTopology: true 
