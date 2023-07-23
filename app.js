@@ -24,7 +24,7 @@ app.use(express.static(__dirname + '/public'))
 
 //rutas web
 app.use('/', require('./router/rutasWeb'))
-app.use('/Conductores', require('/Conductores'))
+app.use('/Conductores', require('./router/Conductores'))
 // Middleware para manejar rutas desconocidas
 app.use((req, res, next) => {
   res.status(404).render("404", {
