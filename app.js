@@ -9,7 +9,7 @@ require('dotenv').config()
 //conexion a base de datos
 const mongoose = require('mongoose');
 
-const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@botviajes.m1qthan.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const uri = process.env.URIMONGO;
 mongoose.connect(uri, 
      { useNewUrlParser: true,
      useUnifiedTopology: true 
