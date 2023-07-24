@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Conductor = require('../models/conductor');
 
-router.get('/', async(req, res) => {
+router.get('/Conductores', async(req, res) => {
 
     try {
         
