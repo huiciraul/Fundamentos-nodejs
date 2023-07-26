@@ -22,5 +22,21 @@ router.get('/', async(req, res) => {
 
 })
 
+router.get('/crear', (req, res) => {
+    res.render('crear')
+})
+
+router.post('/', async (req, res) => {
+    const body = req.body
+    try {
+        const conductorDB = new Conductor(body)
+        await conductorDB.save()
+        console.log('conductor agregado', conductorDB)
+        res.redirect('/Conductores')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 module.exports = router;
