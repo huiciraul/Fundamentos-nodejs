@@ -1,8 +1,7 @@
-const express = require('express');
-const { CLIENT_RENEG_LIMIT } = require('tls');
+const express = require('express'); //en todos estos require, lo que hacemos es solicitar lo que esta en otros modulos que necesitamos en este
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;// como el app.js se vera en el codigo fuente, datos como el puerto que es un dato que se le puede dar un mal uso, lo cargamos atraves de un archivo .env que sera una variable de entorno(es decir un valor que no esta disponible al cliente)
 
 //bodyparser setup
 // parse application/x-www-form-urlencoded
@@ -11,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //para variables de entorno
-require('dotenv').config()
+require('dotenv').config()// este es el require correspondiente para mantener alejadas las variables de entorno del codigo fuente
 
 //conexion a base de datos
-const mongoose = require('mongoose');
+const mongoose = require('mongoose');// aca se importa la libreria de mongoose para interactuar con mongodb de node y se usa la uri almacenada en el archivo.env
 
 const uri = process.env.URIMONGO;
 mongoose.connect(uri, 
