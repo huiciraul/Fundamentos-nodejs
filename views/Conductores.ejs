@@ -9,6 +9,14 @@
             Agregar nuevo conductor
           </a>
         </div>
+        <div class="container">
+        <form class="d-grid gap-2 " action="/Conductores/" method="GET"> <!-- Eliminamos "<%= nombre %>" de la acción -->
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="nombre">
+          <button class="btn btn-warning" type="submit"> <!-- Cambiamos la clase del botón -->
+            Buscar Conductor
+          </button>
+        </form>
+      </div>
              <table class="table">
                 <thead>
                   <tr>
@@ -27,11 +35,27 @@
                                 <th scope="row"><%= conductor.nombre %></th>
                                 <th scope="row"><%= conductor.destino %></th>
                                 <th scope="row"><%= conductor.origen %></th>
+                                <th scope="row">
+                                  <a 
+                                     href="Conductores/<%= conductor.id %>" 
+                                     class="btn btn-warning"
+                                    >
+                                    Editar
+                                  </a>
+                                </th>
                             </tr>
                          <%})%>
                     <% } %>
                 </tbody>
               </table>
+              <div class="d-grid gap-2">
+                <a 
+                  class="btn btn-success"
+                  href="/Conductores" 
+                  >
+                  volver a conductores
+                </a>
+              </div>
 </div>
 
 <%- include('./templates/footer.ejs') %>

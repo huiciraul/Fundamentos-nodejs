@@ -20,7 +20,7 @@ mongoose.connect(uri,
      { useNewUrlParser: true,
      useUnifiedTopology: true 
    })
-  .then(()=> console.log('conectado a mongodb')) 
+  .then(()=> console.log('conectado a mongodb')) //el metodo then se ejecuta si la conexion es exitosa y sino el catch recolecta el error y lo pasa en la consola
   .catch(e => console.log('error de conexión', e))
 
 //motor de plantillas
